@@ -9,6 +9,7 @@ h= rand(1,1);
 
 fprintf( "The energy of a particle in the 2D coordinate system is defined as %.2f*(x(2)-x(1)^2)^2 + (%.2f-x(1))^2 Joules.\n",C,D);
 fprintf( "It is defined in the region such that x(1)+%.2f*x(2)<=%.2f; %.2f*x(1)+x(2)=%.2f; x(1)>=0, x(2)>=0",e,f,g,h);
+fprintf( "Find the position of minimum energy of the particle.\n");
 fun = @(x) C*(x(2)-x(1)^2)^2 + (D-x(1))^2;
     
 % constraints are written in the bellow form
