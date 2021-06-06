@@ -16,10 +16,17 @@ x=randi([1 33],[1 3])
 hi=num2cell(x);
 [a,b,c]=hi{:}
 d=100-a-b-c
+% [a,b,c,d]=[31 33 17 19]
+a=31
+b=33
+c=17
+d=19
 fprintf('Assume that the arrival of people in a 24/7 vaccination centre follows a poisson distribution. Assume a typical demographic distribution of \n')
 fprintf('0/0 dividend\n %d 0-18 \n %d 18-45 \n %d 45-60 \n %d above 60',a,b,c,d)
-fprintf('\nprobability that in an interval of 24 hrs the category of above 60 has the highest vaccination status given only 100 per day')
+fprintf('Also the arrival rate of each age group at the vaccination centre is proportional to population percentage normalised to 10 perhr')
+fprintf('\nprobability that in an interval of 1 hr the older ones get more vaccines than their younger ones .The highest vaccination status given only 13 per hr')
+lambda_sol=num2cell([a,b,c,d]/10)
+[a,b,c,d]=lambda_sol{:}
+double(P(7,1,a)*P(3,1,b)*P(2,1,c)*P(1,1,d))+double(P(6,1,a)*P(4,1,b)*P(2,1,c)*P(1,1,d))+double(P(5,1,a)*P(4,1,b)*P(3,1,c)*P(1,1,d))
 
-double(P(10,0,0))
-% double(P(5,2))
 
