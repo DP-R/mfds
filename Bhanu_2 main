@@ -4,7 +4,7 @@ clear all;
 %f= @(x) x(1).^2+ (x(2)-1).^2
 syms x y ;
 %f= @(x,y) x^2+ (x*y-4)^2
-f=x^2+ (x*y-4)^2
+f= (4 - x^2 - 2*y^2)^2
 %gradf = @(x,y) [ 2*x(1), 2*x(2)-2];
 p=diff(f,x)
 q=diff(f,y)
@@ -16,7 +16,7 @@ b= subs(q, {x,y}, starting_guess)
 
 gradf = [vpa(subs(p, {x,y}, starting_guess)) subs(q, {x,y}, starting_guess)]
 
-iterations = 100;
+iterations = 200;
 step_size = 0.05;
 %epsilon = 0.0000001;
 
