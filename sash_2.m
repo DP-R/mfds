@@ -31,7 +31,7 @@ for i = 1:4
 end
 fprintf("\nAnswer: D.\n Explanation:\n\n");
 fprintf("Let us name the initial frame as A, and the final frame (after translation and rotation) as B.\n");
-fprintf("Firstly we form the rotation matrix\n.It is given as: (for an angle 'x' , wrt Positive X-axis)\n\n");
+fprintf("Firstly we form the rotation matrix.\nIt is given as: (for an angle 'x' , wrt Positive X-axis)\n\n");
 fprintf("1     0     0     0  \n");
 fprintf("1  cos(x) -sin(x) 0  \n");
 fprintf("1  sin(x)  cos(x) 0  \n");
