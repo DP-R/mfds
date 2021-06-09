@@ -1,3 +1,5 @@
+clc;
+clear all;
 n=15;
 fprintf("Q2. You are the regional manager of a famous paper selling company, and make sales over a period of %d days. The profits for each day automatically gets parsed to a specific software. The corporate expects you to have made profits in an increasing order.Unfortunately, the sort function in that software is faulty and doesn't always yield the right answer.\n",n);
 fprintf("The sort function in this software performs %d sequential operations of the type [D_i ,P_i], which means that the list from indices [1,D_i] would be sorted with a probability of P_i , or would remain the same with a probability of 1-P_i .\n",n);
