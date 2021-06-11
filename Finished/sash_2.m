@@ -49,7 +49,7 @@ fprintf("\t1   0   0   T(x) \n");
 fprintf("\t0   1   0   T(y) \n");
 fprintf("\t0   0   1   T(z) \n");
 fprintf("\t0   0   0    1 \n\n");
-fprintf("We now form the matrix A/B by multiplying the rotation and translation matrices, which is: \n");
+fprintf("We now form the matrix A/B (denoted here as 'AB') by multiplying the rotation and translation matrices, which is: \n");
 AB
 fprintf("\nSo, the new position (P) in old frame(A) can be expressed as:\n\t (P in A) = (A/B) * (P in B)\n");
 fprintf("Where , P in B :- coordinates of final point in the new frame, represented as a 4*1 matrix :-\n");
