@@ -7,8 +7,8 @@ f= rand(1,1);
 g= rand(1,1);
 h= rand(1,1);
 
-fprintf( "The energy of a particle in the 2D coordinate system is defined as %.2f*(q-p^2)^2 + (%.2f-p)^2 Joules.\n",C,D);
-fprintf( "It is defined in the region such that p+%.2f*q<=%.2f; %.2f*p+q=%.2f; p>=0, q>=0",e,f,g,h);
+fprintf( "The energy of a particle in the 2D coordinate system is defined as \n\t E = %.2f*(q - p^2)^2 + (%.2f - p)^2 Joules.\n\n",C,D);
+fprintf( "It is defined in the region such that: \n   p + %.2f*q <= %.2f \n   %.2f*p + q = %.2f \n   p >= 0, q >= 0\n\n",e,f,g,h);
 fprintf( "Find the position of minimum energy of the particle.\n");
 fun = @(x) C*(x(2)-x(1)^2)^2 + (D-x(1))^2;
     
@@ -32,8 +32,8 @@ Id=["A.","B.","C.","D."];
 
 options_generation = [1+rand(1,1) rand(1,1) rand(1,1) rand(1,1) rand(1,1) rand(1,1)];
 for i = 1:3
-    fprintf("%s  %f %f \n",Id(i), options_generation(i), options_generation(i+3));
+    fprintf("%s  %.4f %.4f \n",Id(i), options_generation(i), options_generation(i+3));
 end
-   fprintf("%s  %f %f \n",Id(4), x)
+   fprintf("%s  %.4f %.4f \n",Id(4), x)
    
-fprintf("\nANSWER: D\n");
+fprintf("\nAnswer : D\n");
