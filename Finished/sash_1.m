@@ -1,8 +1,8 @@
 clc;
 clear all;
 n=15;
-fprintf("Q2. You are the regional manager of a famous paper selling company, and make sales over a period of %d days. The profits for each day automatically gets parsed to a specific software. The corporate expects you to have made profits in an increasing order.Unfortunately, the sort function in that software is faulty and doesn't always yield the right answer.\n",n);
-fprintf("The sort function in this software performs %d sequential operations of the type [D_i ,P_i], which means that the list from indices [1,D_i] would be sorted with a probability of P_i , or would remain the same with a probability of 1-P_i .\n",n);
+fprintf("You are the regional manager of a famous paper selling company, and make sales over a period of %d days. The profits for each day automatically gets parsed to a specific software. The corporate expects you to have made profits in an increasing order.Unfortunately, the sort function in that software is faulty and doesn't always yield the right answer.\n",n);
+fprintf("The sort function in this software performs sequential operations of the type [D_i ,P_i], which means that the profits-list from indices (days) [1,D_i] would be sorted with a probability of P_i , or would remain the same with a probability of 1-P_i .\n");
 profit=get_profit(n);
 fprintf("\nGiven, profits during the given period:   [");
 for i = 1:n
@@ -10,30 +10,30 @@ for i = 1:n
     fprintf("%d ",cur);
 end
 fprintf("]\n\nFind the probability that the profits' list would be sorted after performing ALL of the below operations.\n")
-fprintf("Sequential operations: (in pairs of D_i , P_i)\n");
+fprintf("Sequential operations: (of the form [D_i , P_i])\n");
 store=get_store(n);
 for i = 1:n
     cur=round(store(i,1));
-    fprintf("[ %d , %.4f ]\n",cur,store(i,2));
+    fprintf("[ %2d , %.4f ]\n",cur,store(i,2));
 end
 fprintf("\nOptions\n");
 Id=["A.","B.","C.","D."];
 options=solve(profit,store);
 for i = 1:4
 	cur=round(options(i),4);
-    fprintf("%s  %f \n",Id(i),cur);
+    fprintf("%s  %.4f \n",Id(i),cur);
 end
-fprintf("\nANSWER: D\n");
-fprintf("Explanation:\n\t");
-fprintf("Firstly, we make the actual sorted profits array and compare it with the given array.Consider 'idx' as the largest index such that profits[idx] != sorted_profits[idx] holds (Which in this case is %d ). So, we are not interested in the operations with D_i less than idx, since the array will still be unsorted.Now, let us look at the case where we *never* get a sorted array. The probability for that to happen is product of all (1-P_i)'s for every i>=idx .The final answer is 1 - (the above result) , that is, 1 - (product of all (1-P_i)'s') for every i >= idx\n",options(5));
-fprintf("So, the probability will be :\n\n1 - ");
+fprintf("\nAnswer: D\n");
+fprintf("Explanation:\n");
+fprintf("Firstly, we make the actual sorted profits array and compare it with the given array.\n\n\tConsider 'idx' as the largest index such that profits[idx] != sorted_profits[idx] holds. (which in this case is %d).\n\nSo, we are not interested in the operations with D_i less than idx, since the array will still be unsorted. Now, let us look at the case where we *never* get a sorted array. The probability for that to happen is product of all (1-P_i)'s for every i>=idx .\n\nThe final answer is 1 - (the above result) , that is, 1 - (product of all (1-P_i)'s') for every i >= idx\n",options(5));
+fprintf("So, the probability will be :\n\n= 1 - ");
 for i = options(5):n
-	fprintf("(1-%f)",store(i,2));
+	fprintf("(1 - %f)",store(i,2));
 	if i ~= n
-		fprintf(" * ");
+		fprintf("*");
 	end
 end
-fprintf("\n= %f \n",options(4));
+fprintf("\n= %.4f \n",options(4));
 % Function to generate profits array, such that idx is some value not equal to n
 function a=get_profit(n)
     a=zeros(1,n);
