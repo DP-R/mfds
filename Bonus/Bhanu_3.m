@@ -20,7 +20,7 @@ b3 =100*randi([9,12],1,1);
 
 
 fprintf( " solve the LPP using graphical method and find the Optimal Basic Feasible Solution from the graph.\n")
-fprintf( " Objective Function is defined as %.2f x1 +%.2f x2.\n",c1,c2)
+fprintf( " Objective Function is defined as Maximise %.2f x1 +%.2f x2.\n",c1,c2)
 fprintf( " Constraints are given by %.2f x1 +%.2f x2 <= %.2f , %.2f x1 +%.2f x2 <= %.2f , %.2f x1 +%.2f x2 <= %.2f and x1,x2>=0.\n",A11,A12,b1,A21,A22,b2,A31,A32,b3)
 
 
@@ -67,9 +67,9 @@ arr= [1,2,3,1];
 for i= 1:3
     
     A1 = A(arr(i),:);
-    b1 = b(arr(i),:);
+    b_1 = b(arr(i),:);
     A2 = A(arr(i+1),:);
-    b2 = b(arr(i+1),:);
+    b_2 = b(arr(i+1),:);
     
    
         Aa = [A1;A2];
@@ -79,7 +79,7 @@ for i= 1:3
     Corner_Points(i,:) = [New_corner_point];
 end
     
-     All_Corner_Points = [Corner_Points; corpt ];
+     All_Corner_Points = [Corner_Points; corpt ]
     
 Feasible_Corner_Points = constraint(All_Corner_Points, A11,A12,A21,A22,A31,A32,b1,b2,b3);
 Feasible_Corner_Points = unique (Feasible_Corner_Points, 'rows');
@@ -91,13 +91,30 @@ end
 x1_x2_z = [Feasible_Corner_Points z];
 
 [z_val, z_index] = max(z);
-optimal_BFS_value = x1_x2_z(z_index,:)
+optimal_BFS_value = x1_x2_z(z_index,:);
 
- fprintf("%d\n",A11)
+ 
+ fprintf("\nOptions\n");
+Id=["A.","B.","C.","D."];
 
+
+for i = 1:3
+	
+    fprintf("%s %f %f \n",Id(i),All_Corner_Points(i,:));
+end
+    fprintf("%s %f %f \n",Id(4),Feasible_Corner_Points(z_index,:));
+ 
+ fprintf("\n Explanation:\n");
+ fprintf(" The graph is generated from the code written above.\n")
+ fprintf(" the corner points other than on the axes are calculated from the graph. \n")
+ Corner_Points
+ fprintf(" feasibilty of these Corner points are checked. \n")
+ fprintf(" Optimum value from the feasible corner points including the corner points on the axis is calculated.\n")
+ x1_x2_z(z_index,:)
+ 
 function out = constraint(X, A11,A12,A21,A22,A31,A32,b1,b2,b3)
 
- fprintf("%d\n",A11)
+ 
     x1 = X(:,1);
     x2 = X(:,2);
    
@@ -122,4 +139,5 @@ function out = constraint(X, A11,A12,A21,A22,A31,A32,b1,b2,b3)
     
 out =X;
 end
+
 
