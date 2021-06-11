@@ -48,7 +48,7 @@ for i = 1:n
 	print(V_dash,n,i,0);
 	fprintf("\n");
 end
-fprintf("\nHere, we have the last matrix as V' (transpose of V). So, we revert it to V.");
+fprintf("\nHere, we have the last matrix as V' (transpose of V). So, we revert it back to V.");
 V
 fprintf("We now express V as the linear decomposition of 2 matrices L,U - lower, and upper triangular matrices respectively.\n");
 fprintf("\n\tV \t\t\t\tL\t\t\t\tU\n\n");
