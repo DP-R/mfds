@@ -1,5 +1,3 @@
-clc;
-clear all;
 C= rand(1,1);
 D= rand(1,1);
 e= rand(1,1);

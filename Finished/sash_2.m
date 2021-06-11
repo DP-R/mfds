@@ -1,5 +1,3 @@
-clc;
-clear all;
 initial=zeros(1,3);
 for i = 1:3
 	initial(i)=-10+randi(20);

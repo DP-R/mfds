@@ -1,6 +1,3 @@
-% A = U S V'
-clc;
-clear all;
 n=4;
 A=rand(n,n);
 for i = 1:n

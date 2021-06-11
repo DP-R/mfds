@@ -1,6 +1,3 @@
-clc;
-clear all;
-
 a= randi([1,6],1,1);
 b= randi([1,5],1,1);
 step_size = 0.01* randi([1,7],1,1);
@@ -49,4 +46,4 @@ for i = 1:3
     fprintf("%s  %f  \n",Id(i), subs(f, {x,y}, k(randi([0, (iterations - rem(iterations,4))/4],1,1),:)));
 end
     fprintf("%s  %f \n",Id(4), optimum_value);
-    fprintf("\nANSWER: D\n");
+    fprintf("\Answer: D\n");

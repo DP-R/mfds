@@ -1,5 +1,3 @@
-clc;
-clear all;
 %random input population data
 input_matrix=[31 33 17 19;27 32 22 19;24 30 32 14;26 27 29 18];
 %selection of one row
