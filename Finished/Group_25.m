@@ -1,6 +1,8 @@
 clc;
 clear all;
 fprintf("CH5019 - Project \nGroup no. - 25");
+% below loops just prints all variants of all questions
+% all questions are contained in functions that are define below
 for i = 1:5
     q1(1,i);
 end
@@ -20,14 +22,19 @@ for i = 1:5
     q6(6,i);
 end
 
+% to print the variant and question number
 function variant(x,y)
-    fprintf("\n-----------------------------------------------------------------------------------\n\n");
+    fprintf("\n----------------------------------------");
+	fprintf("-------------------------------------------\n\n");
     if y == 1
         fprintf("Q %d. - Type: Numerical\n",x);
     end
     fprintf("<Q. %d, V. %d>\n\n",x,y);
 end
 
+
+
+% ===============================================   QUESTION - 1 ================================================
 function q1(ques,vari)
     variant(ques,vari);
     %random input population data
@@ -92,6 +99,9 @@ function q1(ques,vari)
         end
 end
 
+
+
+% ===============================================   QUESTION - 2 ================================================
 function q2(ques,vari)
     variant(ques,vari);
     n=15;
@@ -189,6 +199,9 @@ function q2(ques,vari)
     end
 end
 
+
+
+% ===============================================   QUESTION - 3 ================================================
 function q3(ques,vari)
     variant(ques,vari);
     initial=zeros(1,3);
@@ -288,6 +301,9 @@ function q3(ques,vari)
     end
 end
 
+
+
+% ===============================================   QUESTION - 4 ================================================
 function q4(ques,vari)
     variant(ques,vari);
     n=4;
@@ -338,10 +354,11 @@ function q4(ques,vari)
     fprintf("\nThe eigen values of the matrix U are : ");
     eigs_of_u
     fprintf("Out of the given matrices, Option D. has the same eigen values as that of U.\n");
-
-    % Function to print matrices inline
 end
 
+
+
+% ===============================================   QUESTION - 5 ================================================
 function q5(ques,vari)
     variant(ques,vari);
     C= rand(1,1);
@@ -401,6 +418,9 @@ function q5(ques,vari)
     x
 end
 
+
+
+% ===============================================   QUESTION - 6 ================================================
 function q6(ques,vari)
     variant(ques,vari);
     a= randi([1,6],1,1);
