@@ -331,6 +331,10 @@ function q4(ques,vari)
     fprintf("Answer: D\nExplanation:\n\n");
     fprintf("For the given matrix A, we express the unique singular value decomposition (SVD) as:\n");
     fprintf("\n\tA\t\t\t\t    W\t\t\t\tS\t\t\t\tV_dash\n\n");
+	fprintf("\n\t A  =  W * S * V_dash\nAs: \n");
+	W
+	S
+	V_dash
     for i = 1:n
         var=0;
         if i == 2
@@ -345,17 +349,9 @@ function q4(ques,vari)
     fprintf("\nHere, we have the last matrix as V' (transpose of V). So, we revert it back to V.");
     V
     fprintf("We now express V as the linear decomposition of 2 matrices L,U - lower, and upper triangular matrices respectively.\n");
-    fprintf("\n\tV \t\t\t\tL\t\t\t\tU\n\n");
-    for i = 1:n
-        var=0;
-        if i == 2
-            var=1;
-        end
-        print(V,n,i,var);
-        print(L,n,i,0);
-        print(U,n,i,0);
-        fprintf("\n");
-    end
+    fprintf("\n\t V = L * U\nAs\n");
+	L
+	U
     fprintf("\nThe eigen values of the matrix U are : ");
     eigs_of_u
     fprintf("Out of the given matrices, Option D. has the same eigen values as that of U.\n");
