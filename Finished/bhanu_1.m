@@ -1,7 +1,3 @@
-clc;
-clear all;
-
-
 C= rand(1,1);
 D= rand(1,1);
 e= rand(1,1);
@@ -34,9 +30,9 @@ Id=["A.","B.","C.","D."];
 
 options_generation = [1+rand(1,1) rand(1,1) rand(1,1) rand(1,1) rand(1,1) rand(1,1)];
 for i = 1:3
-    fprintf("%s  %.4f %.4f \n",Id(i), options_generation(i), options_generation(i+3));
+   	fprintf("%s  %.4f %.4f \n",Id(i), options_generation(i), options_generation(i+3));
 end
-   fprintf("%s  %.4f %.4f \n",Id(4), x)
+   	fprintf("%s  %.4f %.4f \n",Id(4), x)
    
 fprintf("\nAnswer : D\n");
 

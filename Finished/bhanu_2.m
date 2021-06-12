@@ -1,8 +1,3 @@
-clc;
-clear all;
-
-
-
 a= randi([1,6],1,1);
 b= randi([1,5],1,1);
 step_size = 0.01* randi([1,7],1,1);
@@ -36,10 +31,10 @@ for i=1:iterations
     next_guess = next_guess - step_size*gradf;
     k(i,:) =  next_guess;
     gradf = [round(subs(dfdx, {x,y}, next_guess),3) round(subs(dfdy, {x,y}, next_guess),3)];
-   if optimum_value > subs(f, {x,y}, next_guess)
-       optimum_value = subs(f, {x,y}, next_guess);
-       optimal_point = next_guess;
-   end 
+    if optimum_value > subs(f, {x,y}, next_guess)
+        optimum_value = subs(f, {x,y}, next_guess);
+        optimal_point = next_guess;
+    end 
 end
 
 optimum_value = round(vpa(optimum_value),3);
@@ -50,15 +45,14 @@ Id=["A.","B.","C.","D."];
 for i = 1:3
     fprintf("%s  %f  \n",Id(i), subs(f, {x,y}, k(randi([0, (iterations - rem(iterations,4))/4],1,1),:)));
 end
-    fprintf("%s  %f \n",Id(4), optimum_value);
-    fprintf("Answer: D\n");
-    
-     fprintf("\n Explanation:\n");
- fprintf(" partial derivative of 'f' at (x,y) w.r.t x & y is calculated as: \n")
- dfdx=diff(f,x)
+fprintf("%s  %f \n",Id(4), optimum_value);
+fprintf("Answer: D\n");
+fprintf("\n Explanation:\n");
+fprintf(" partial derivative of 'f' at (x,y) w.r.t x & y is calculated as: \n")
+dfdx=diff(f,x)
 dfdy=diff(f,y)
- fprintf(" Starting guess is taken as [2,1]\n");
- fprintf(" for each iteration a new (x,y) is calculated using the step size And the formula [x(i+1),y(i+1)]=[x(i),y(i)]- step_size*grad(f)@(x(i),y(i)).\n")
- fprintf(" After the given number of iterations, 'optimum_value' and 'optimum_point' is calculated from the value of function at each step \n")
- optimum_value 
+fprintf(" Starting guess is taken as [2,1]\n");
+fprintf(" for each iteration a new (x,y) is calculated using the step size And the formula [x(i+1),y(i+1)]=[x(i),y(i)]- step_size*grad(f)@(x(i),y(i)).\n")
+fprintf(" After the given number of iterations, 'optimum_value' and 'optimum_point' is calculated from the value of function at each step \n")
+optimum_value 
 optimal_point
