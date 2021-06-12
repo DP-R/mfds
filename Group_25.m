@@ -1,18 +1,29 @@
 clc;
 clear all;
 
-q1(1,1)
+for i = 1:5
+    q1(1,i);
+end
 
-q2(2,1)
+for i = 1:5
+    q2(2,i);
+end
 
-q3(3,1)
+for i = 1:5
+    q3(3,i);
+end
 
-q4(4,1)
+for i = 1:5
+    q4(4,i);
+end
 
-q5(5,1)
+for i = 1:5
+    q5(5,i);
+end
 
-q6(6,1)
-
+for i = 1:5
+    q6(6,i);
+end
 
 function variant(x,y)
     fprintf("\n\n\n");
@@ -484,4 +495,3 @@ function q6(ques,vari)
     optimum_value 
     optimal_point
 end
-
