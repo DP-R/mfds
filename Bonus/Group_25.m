@@ -2,6 +2,8 @@ format short g
 clc;
 clear all;
 
+fprintf("CH5019 - Project\n");
+fprintf("Group - 25");
 for i = 1:5
     q1(1,i);
 end
@@ -140,12 +142,19 @@ function q2(ques,vari)
     fprintf('As part of an experiment to determine the efficiency of a vaccine, a test drive is conducted and certain parameters were measured during the drive like gender,age and weight\n')
     fprintf('Determine what kind of data they were?\n')
     answer=['nominal interval ratio'];
-    dupe1=['ordinal','interval', 'ordinal'];
-    dupe2=['ratio','interval', 'ordinal'];
-    dupe3=['nominal','ratio', 'ordinal'];
+    dupe1=['ordinal',' interval', ' ordinal'];
+    dupe2=['ratio',' interval', ' ordinal'];
+    dupe3=['nominal',' ratio', ' ordinal'];
     fprintf('A: %s\n',answer)
     fprintf('B: %s\n',dupe1)
     fprintf('C: %s\n',dupe2)
     fprintf('D: %s\n',dupe3)
+    fprintf("\nAnswer: A\n");
+    fprintf('Explanation:\n');
+    fprintf('Gender is nominal as it is purely an id label for collection.\n')
+    fprintf('Age is interval data as the order and intervals within it are meaningful and used for data segregation.\n')
+    fprintf('Weight is a ratio variable as it has the properties of an interval and also zero weight is meaningful and two weight variables can be compared by division.\n')
+
+    
 
 end
