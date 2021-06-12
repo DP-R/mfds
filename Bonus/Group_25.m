@@ -1,4 +1,4 @@
-format short
+format short g
 clc;
 clear all;
 
@@ -8,7 +8,7 @@ end
 
 function variant(x,y)
     fprintf("\n\n\n");
-    fprintf("<Q. %d, V. %d>\n\n",x,y);
+    fprintf("<Q. %d, V. %d>\n----------------------------------------------\n",x,y);
 end
 
 function q1(ques,vari)
