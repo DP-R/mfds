@@ -4,29 +4,24 @@ fprintf("CH5019 - Project \nGroup no. - 25");
 for i = 1:5
     q1(1,i);
 end
-
 for i = 1:5
     q2(2,i);
 end
-
 for i = 1:5
     q3(3,i);
 end
-
 for i = 1:5
     q4(4,i);
 end
-
 for i = 1:5
     q5(5,i);
 end
-
 for i = 1:5
     q6(6,i);
 end
 
 function variant(x,y)
-    fprintf("\n-------------------------------------------------------------------------------------------------\n\n");
+    fprintf("\n-----------------------------------------------------------------------------------\n\n");
     if y == 1
         fprintf("Q %d. - Type: Numerical\n",x);
     end
@@ -330,22 +325,10 @@ function q4(ques,vari)
     end
     fprintf("Answer: D\nExplanation:\n\n");
     fprintf("For the given matrix A, we express the unique singular value decomposition (SVD) as:\n");
-    fprintf("\n\tA\t\t\t\t    W\t\t\t\tS\t\t\t\tV_dash\n\n");
 	fprintf("\n\t A  =  W * S * V_dash\nAs: \n");
 	W
 	S
 	V_dash
-    for i = 1:n
-        var=0;
-        if i == 2
-            var=1;
-        end
-        print(A,n,i,var);
-        print(W,n,i,0);
-        print(S,n,i,0);
-        print(V_dash,n,i,0);
-        fprintf("\n");
-    end
     fprintf("\nHere, we have the last matrix as V' (transpose of V). So, we revert it back to V.");
     V
     fprintf("We now express V as the linear decomposition of 2 matrices L,U - lower, and upper triangular matrices respectively.\n");
@@ -357,21 +340,6 @@ function q4(ques,vari)
     fprintf("Out of the given matrices, Option D. has the same eigen values as that of U.\n");
 
     % Function to print matrices inline
-    function print(X,n,i,var)
-        for j = 1:n
-            if X(i,j) < 0 || X(i,j) >= 10
-                fprintf('');
-            else
-                fprintf(' ');
-            end
-            fprintf("%.3f ",X(i,j));
-        end
-        if i == 2 && var == 1
-            fprintf("  =  ");
-        else
-            fprintf("\t ");
-        end
-    end
 end
 
 function q5(ques,vari)
