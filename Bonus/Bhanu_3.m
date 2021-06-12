@@ -19,9 +19,9 @@ b2 =100*randi([10,13],1,1);
 b3 =100*randi([9,12],1,1);
 
 
-fprintf( " solve the LPP using graphical method and find the Optimal Basic Feasible Solution from the graph.\n")
-fprintf( " Objective Function is defined as Maximise %.2f x1 +%.2f x2.\n",c1,c2)
-fprintf( " Constraints are given by %.2f x1 +%.2f x2 <= %.2f , %.2f x1 +%.2f x2 <= %.2f , %.2f x1 +%.2f x2 <= %.2f and x1,x2>=0.\n",A11,A12,b1,A21,A22,b2,A31,A32,b3)
+fprintf( "Solve the LPP using graphical method and find the Optimal Basic Feasible Solution from the graph.\n")
+fprintf( "Objective Function is defined as Maximise %.2f x1 +%.2f x2.\n",c1,c2)
+fprintf( "Constraints are given by %.2f x1 +%.2f x2 <= %.2f , %.2f x1 +%.2f x2 <= %.2f , %.2f x1 +%.2f x2 <= %.2f and x1,x2>=0.\n",A11,A12,b1,A21,A22,b2,A31,A32,b3)
 
 
 
